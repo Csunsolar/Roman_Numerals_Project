@@ -11,7 +11,6 @@ if 1 < len(r_numerals) <= 4:
             addition = True
             x += 1
             y += 1
-            print("YES")
         else:
             addition = False
 elif len(r_numerals) > 4:
