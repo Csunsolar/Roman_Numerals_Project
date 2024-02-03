@@ -12,6 +12,7 @@ if 1 < len(r_numerals) <= 7:
             addition = True
             x += 1
             y += 1
+            #add x to the list if it's larger than y? then add the difference from the else statement to the list too.
         else:
             addition = False
             #gets the difference between the smaller roman numeral and the larger roman numeral
