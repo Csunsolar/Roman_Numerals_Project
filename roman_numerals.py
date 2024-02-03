@@ -16,12 +16,12 @@ if 1 < len(r_numerals) <= 7:
             addition = False
             #gets the difference between the smaller roman numeral and the larger roman numeral
             z = rndict.get(r_numerals[x+1]) - rndict.get(r_numerals[x])
-            x += 1
-            y += 1
-            for q in range(len(r_numerals)-1):
-                if rndict.get(r_numerals[x]) >= rndict.get(r_numerals[y]):
-                    x += 1
-                    y += 1            
+            # x += 1
+            # y += 1
+            # for q in range(len(r_numerals)-1):
+            #     if rndict.get(r_numerals[x]) >= rndict.get(r_numerals[y]):
+            #         x += 1
+            #         y += 1            
 elif len(r_numerals) > 7:
     print("Invalid. Roman Numerals can only be 7 characters long")
 else:    
