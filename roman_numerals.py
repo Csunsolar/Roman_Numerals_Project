@@ -1,46 +1,38 @@
-rndict = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+rn_dict = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
 
-r_numerals = input("Type in Roman Numerals Here: ")
+rn_response = input("Type in Roman Numerals Here: ")
 addition = ""
+add_list = []
+sub_list = []
+enumerate(rn_response)
 
 #check to make sure that length of roman numeral is valid
-if 1 < len(r_numerals) <= 7:
+if 1 < len(rn_response) <= 7:
     x, y = [0, 1]
-    for q in range(len(r_numerals)-1):
-        enumerate(r_numerals)
-        if rndict.get(r_numerals[x]) >= rndict.get(r_numerals[y]):
+    for q in range(len(rn_response)-1):
+        if y <= len(rn_response) and rn_dict.get(rn_response[x]) >= rn_dict.get(rn_response[y]):
             addition = True
+            add_list.append(rn_dict.get(rn_response[x]))
             x += 1
             y += 1
-            #add x to the list if it's larger than y? then add the difference from the else statement to the list too.
-        else:
-            addition = False
+            if x == len(rn_response) - 1:
+                add_list.append(rn_dict.get(rn_response[x]))
+                break
+        elif y < len(rn_response):
             #gets the difference between the smaller roman numeral and the larger roman numeral
-            z = rndict.get(r_numerals[x+1]) - rndict.get(r_numerals[x])
-            # x += 1
-            # y += 1
-            # for q in range(len(r_numerals)-1):
-            #     if rndict.get(r_numerals[x]) >= rndict.get(r_numerals[y]):
-            #         x += 1
-            #         y += 1            
-elif len(r_numerals) > 7:
+            addition = True
+            z = rn_dict.get(rn_response[y]) - rn_dict.get(rn_response[x])
+            sub_list.append(z)
+            x += 2
+            y += 2
+        else:
+            break
+       
+elif len(rn_response) > 7:
     print("Invalid. Roman Numerals can only be 7 characters long")
 else:    
-    addition = True
-
-#makes list of dict values for each character of r_numerals
-r_list = []
-for a in r_numerals:
-   r_list.append(rndict.get(a))
+    print(rn_dict.get(rn_response))
 
 if addition == True:
-    print(sum(r_list))
-elif addition == False:
-    print(sum(r_list[:x]) + z)
-
-
-
-
-       
-
-
+    answer = sum(add_list) + sum(sub_list)
+    print(answer)
