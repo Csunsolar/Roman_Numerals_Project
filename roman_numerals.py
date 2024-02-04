@@ -7,7 +7,7 @@ sub_list = []
 enumerate(rn_response)
 
 #check to make sure that length of roman numeral is valid
-if 1 < len(rn_response) <= 7:
+if len(rn_response) > 1:
     x, y = [0, 1]
     for q in range(len(rn_response)-1):
         if y < len(rn_response) and rn_dict.get(rn_response[x]) >= rn_dict.get(rn_response[y]):
@@ -30,9 +30,6 @@ if 1 < len(rn_response) <= 7:
                 break
         else:
             break
-       
-elif len(rn_response) > 7:
-    print("Invalid. Roman Numerals can only be 7 characters long")
 else:    
     print(rn_dict.get(rn_response))
 
