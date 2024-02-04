@@ -10,7 +10,7 @@ enumerate(rn_response)
 if 1 < len(rn_response) <= 7:
     x, y = [0, 1]
     for q in range(len(rn_response)-1):
-        if y <= len(rn_response) and rn_dict.get(rn_response[x]) >= rn_dict.get(rn_response[y]):
+        if y < len(rn_response) and rn_dict.get(rn_response[x]) >= rn_dict.get(rn_response[y]):
             addition = True
             add_list.append(rn_dict.get(rn_response[x]))
             x += 1
@@ -25,6 +25,9 @@ if 1 < len(rn_response) <= 7:
             sub_list.append(z)
             x += 2
             y += 2
+            if x == len(rn_response) - 1:
+                add_list.append(rn_dict.get(rn_response[x]))
+                break
         else:
             break
        
