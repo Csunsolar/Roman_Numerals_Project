@@ -1,11 +1,19 @@
 rn_dict = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+acceptable_responses = set('IVXLCDM')
 
-rn_response = input("Type in Roman Numerals Here: ")
 addition = ""
 add_list = []
 sub_list = []
-enumerate(rn_response)
 
+while True:
+    response = input("Type in Roman Numerals Here: ")
+    rn_response = response.upper()
+    if set(rn_response).issubset(acceptable_responses):
+        enumerate(rn_response)
+        break
+    else:
+        print("""This is not an acceptable input. Please be sure to use "M, D, C, L, X, V, or I.""")
+        
 #check to make sure that length of roman numeral is valid
 if len(rn_response) > 1:
     x, y = [0, 1]
