@@ -12,7 +12,7 @@ while True:
         enumerate(rn_response)
         break
     else:
-        print("""This is not an acceptable input. Please be sure to use "M, D, C, L, X, V, or I.""")
+        print('"This is not an acceptable input. Please be sure to use "M, D, C, L, X, V, or I."')
         
 #check to make sure that length of roman numeral is valid
 if len(rn_response) > 1:
